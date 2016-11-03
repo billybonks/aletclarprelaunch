@@ -1,25 +1,36 @@
 <div class="header">
   <div class="content">
-    <p class="logo brandon">Harry&#8217;s</p>
-    <p class="byline brandon">THANK YOU FOR SIGNING UP</p>
+      <p class="why trade">THANKS FOR JOINING US!</p>
   </div>
 </div>
 
-<div class="hero">
-  <div class="page-content clearfix">
-    <div class="mammoth">
-      <span class="need brandon">Shaving Is<br>Evolving</span>
-    </div>
-    <div class="share-wrap">
-      <p class="why brandon">Don't leave your friends behind</p>
-      <p class="title brandon">INVITE FRIENDS &<br>Earn Product</p>
-      <p class="subtitle brandon">Share your unique link via email, Facebook<br>or Twitter and earn Harry's goods for<br>each friend who signs up.</p>
-      <div class="copy-link brandon"><%= root_url %>?ref=<%= @user.referral_code %></div>
-      <% twitter_message = "#Shaving is evolving. Excited for @harrys to launch." %>
+<div class="aec_hero">
+   <img class="aec_hero_img" src="assets/home/aec_hero.jpg">
+   <img class="aec_small_hero_img" src="assets/home/aec_small_hero.jpg">
+   
+   <div class="page-content clearfix">
+      <div class="aec_refer_content">
+      
+      <img class="aec_logomark" src="assets/refer/aec_logomark_white.png">
+        <div class="share-wrap">
+
+          <p class="why trade">DON'T LEAVE YOUR FRIENDS BEHIND.</p>
+          <p class="title trade">INVITE YOUR FRIENDS &amp; EARN SHOPPING TREATS.</p>
+          <p class="subtitle lato">Share your unique link via email, Facebook, Twitter or Whatsapp and earn a special treat for each friend who signs up.</p>
+            
+            <div class="copy-link lato"><%= root_url %>?ref=<%= @user.referral_code %>
+              <div class="cl">
+              <i class="fa fa-link" aria-hidden="true" onclick="copyToClipboard('<%= root_url %>?ref=<%= @user.referral_code %>')"></i>
+              </div>
+            </div>
+        
       <div class="social-links">
-        <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"></a>
-        <div class="sep"></div>
-        <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
+        <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+        <p>/</p>
+         <% twitter_message = "#TheNewAEC. Excited for @aletclar to launch." %>
+        <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+       
+      </div>
       </div>
     </div>
   </div>
@@ -41,20 +52,19 @@
     end
   }
 %>
+
 <div class="prizes <% if found %>prize-<%= found["class"] %><% end %>">
   <div class="page-content">
-    <p class="callout brandon">Here's How It Works:</p>
+    <p class="callout trade">( HERE'S HOW IT WORKS )</p>
+    <p class="small_screen title trade">( FRIENDS JOINED VS AL ET CLAR TREATS )</p>
     <ul class="products clearfix">
-      <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards">Harry's Product</p></li>
+      <li class="title trade"><p class="friends">FRIENDS JOINED</p><p class="rewards">AL ET CLAR TREATS</p></li>
+
       <% stops.each do |stop| %>
-        <li class="product brandon <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
-          <div class="circle"><%= stop["count"] %></div>
+        <li class="product lato <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
+          <div class="circle trade"><%= stop["count"] %></div>
           <div class="sep"></div>
           <p><%= stop["html"].html_safe %></p>
-
-          <div class="tooltip">
-            <img src="<%= stop["image"] %>" height="254">
-          </div>
         </li>
       <% end %>
     </ul>
@@ -75,13 +85,35 @@
     %>
 
     <% if referrals_count == 0 %>
-      <p class="place brandon"><span>No</span> friends have joined...Yet!</p>
+      <p class="place trade"><span>NO</span> FRIENDS HAVE JOINED YET... KEEP CHECKING!</p>
     <% else %>
-      <p class="place brandon"><span><%= referrals_count %></span> <%= words %> joined</p>
+      <p class="place trade"><span><%= referrals_count %></span> <%= words %> JOINED</p>
     <% end %>
-    <p class="check brandon">Keep checking</p>
+<!--     <p class="check brandon">Keep checking</p> -->
 
-    <p class="ship brandon">We ship to the U.S. (& Canada Soon)</p>
-    <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a>
+<!--     <a class="policy brandon" href="/privacy-policy" target="_blank">Privacy Policy</a> -->
   </div>
 </div>
+
+<script src="https://use.fontawesome.com/4bcdb51a04.js"></script>
+<script>
+// A simple function to copy a string to clipboard. See https://github.com/lgarron/clipboard.js for a full solution.
+var copyToClipboard = (function() {
+  var _dataString = null;
+  document.addEventListener("copy", function(e){
+    if (_dataString !== null) {
+      try {
+        e.clipboardData.setData("text/plain", _dataString);
+        e.preventDefault();
+      } finally {
+        _dataString = null;
+      }
+    }
+  });
+  return function(data) {
+    _dataString = data;
+    document.execCommand("copy");
+  };
+})();
+</script>
+

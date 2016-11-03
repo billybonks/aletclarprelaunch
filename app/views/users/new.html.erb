@@ -1,12 +1,27 @@
-<div class="hero">
-  <p class="large brandon">Harry&#8217;s is live</p>
-  <p class="small brandon">Respecting the Face and Wallet<br>Since Like...Right Now.</p>
-</div>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<div class="aec_hero">
+	<img class="aec_hero_img" src="assets/home/aec_hero.jpg">
+	<img class="aec_small_hero_img" src="assets/home/aec_small_hero.jpg">
 
-<div class="form-wrap clearfix <%= "ended" if Rails.application.config.ended %>">
-  <% if Rails.application.config.ended %>
-    <%= render "users/campaign_ended" %>
-  <% else %>
-    <%= render "users/campaign_ongoing" %>
-  <% end %>
+	<div class="aec_home_content">
+		<img class="aec_logo" src="assets/home/aec_logo_white@2x.png">
+		<div class="aec_home_text_wrap">
+		  <p class="aec_large_heading trade">A NEW CHAPTER BEGINS.</p>
+		  <p class="aec_small_heading lato">Join us in redefining fashion with elevated classics.</p>
+	  		<div class="form-wrap clearfix <%= "ended" if Rails.application.config.ended %>">
+			  <% if Rails.application.config.ended %>
+			    <%= render "users/campaign_ended" %>
+			  <% else %>
+			    <%= render "users/campaign_ongoing" %>
+			  <% end %>
+			</div>
+	 	</div> 
+	 </div>
+
 </div>
+<!-- <div class="hero">
+
+  <p class="large_heading">A NEW CHAPTER BEGINS.</p>
+  <p class="small_heading">Join us in redefining fashion with elevated classics.</p>
+</div>
+ -->

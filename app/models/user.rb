@@ -14,34 +14,40 @@ class User < ActiveRecord::Base
   after_create :send_welcome_email
 
   REFERRAL_STEPS = [
+
+    {
+      'count' => 2,
+      'html' => 'Sneak peek at the launch collection',
+      # 'class' => 'two',
+      # 'image' =>  ActionController::Base.helpers.asset_path(
+      #   'refer/cream-tooltip@2x.png')
+    },
     {
       'count' => 5,
-      'html' => 'Shave<br>Cream',
-      'class' => 'two',
-      'image' =>  ActionController::Base.helpers.asset_path(
-        'refer/cream-tooltip@2x.png')
+      'html' => 'Exclusive Access: <br> Shop the launch collection a day before everyone else',
+      # 'class' => 'three',
+      # 'image' => ActionController::Base.helpers.asset_path(
+      #   'refer/truman@2x.png')
     },
     {
-      'count' => 10,
-      'html' => 'Truman Handle<br>w/ Blade',
-      'class' => 'three',
-      'image' => ActionController::Base.helpers.asset_path(
-        'refer/truman@2x.png')
+      'count' => 15,
+      'html' => 'S$20 shopping voucher',
+      # 'class' => 'four',
+      # 'image' => ActionController::Base.helpers.asset_path(
+      #   'refer/winston@2x.png')
     },
     {
-      'count' => 25,
-      'html' => 'Winston<br>Shave Set',
-      'class' => 'four',
-      'image' => ActionController::Base.helpers.asset_path(
-        'refer/winston@2x.png')
+      'count' => 30,
+      'html' => 'Free Quintessential Top worth S$46',
+      # 'class' => 'five',
+      # 'image' => ActionController::Base.helpers.asset_path(
+      #   'refer/blade-explain@2x.png')
     },
     {
-      'count' => 50,
-      'html' => 'One Year<br>Free Blades',
-      'class' => 'five',
-      'image' => ActionController::Base.helpers.asset_path(
-        'refer/blade-explain@2x.png')
+      'count' => 60,
+      'html' => 'Free local shipping for life'
     }
+
   ]
 
   private
