@@ -521,7 +521,7 @@ img.aec_logo {
 
 
 #refer .prizes ul.products{
-	height: 105px;
+	/*height: 105px;*/
 	width: 100%;
 	margin-top: 30px;
 	position: relative;
@@ -535,7 +535,7 @@ img.aec_logo {
     font-weight: 500;
     font-size: 0.7em;
     float: left;
-    margin-right: 68px;
+    margin-right: 50px;
 }
 
 #refer .prizes .products li.title .friends{
@@ -549,9 +549,9 @@ img.aec_logo {
 }
 
 #refer .prizes .products li.product{
-	height: 100%;
+	height: auto;
 	color: #3e4999;
-	width: 13%;
+	width: 11%;
 	margin-right: 4%;
 	float: left;
 	position: relative;
