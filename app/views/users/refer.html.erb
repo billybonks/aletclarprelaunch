@@ -7,29 +7,29 @@
 <div class="aec_hero">
    <img class="aec_hero_img" src="assets/home/aec_hero.jpg">
    <img class="aec_small_hero_img" src="assets/home/aec_small_hero.jpg">
-   
+
    <div class="page-content clearfix">
       <div class="aec_refer_content">
-      
+
       <img class="aec_logomark" src="assets/refer/aec_logomark_white.png">
         <div class="share-wrap">
 
           <p class="why trade">DON'T LEAVE YOUR FRIENDS BEHIND.</p>
           <p class="title trade">INVITE YOUR FRIENDS &amp; EARN SHOPPING TREATS.</p>
           <p class="subtitle lato">Share your unique link via email, Facebook, Twitter or Whatsapp and earn a special treat for each friend who signs up.</p>
-            
+
             <div class="copy-link lato"><%= root_url %>?ref=<%= @user.referral_code %>
               <div class="cl">
               <i class="fa fa-link" aria-hidden="true" onclick="copyToClipboard('<%= root_url %>?ref=<%= @user.referral_code %>')"></i>
               </div>
             </div>
-        
+
       <div class="social-links">
         <a href="http://www.facebook.com/sharer/sharer.php?u=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&title=Harrys" class="fb" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
         <p>/</p>
          <% twitter_message = "#TheNewAEC. Excited for @aletclar to launch." %>
         <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-       
+
       </div>
       </div>
     </div>
@@ -65,6 +65,7 @@
           <div class="circle trade"><%= stop["count"] %></div>
           <div class="sep"></div>
           <p><%= stop["html"].html_safe %></p>
+          
         </li>
       <% end %>
     </ul>
@@ -116,4 +117,3 @@ var copyToClipboard = (function() {
   };
 })();
 </script>
-
