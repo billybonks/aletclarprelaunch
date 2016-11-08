@@ -514,18 +514,23 @@ img.aec_logo {
 	left: 0;
 }
 
-#refer .prizes .progress .mover .bar{
+.progress .mover .bar{
 	background: image-url("refer/aec_progress-done.png") 0 0 repeat-x;
-	width: 155px;
+	width: 15%;
 	height: 4px;
 	-webkit-background-size: 1px 4px;
 	background-size: 1px 4px;
 }
 
-#refer .prize-two .progress .mover .bar{ width: 312px; }
-#refer .prize-three .progress .mover .bar{ width: 566px; }
-#refer .prize-four .progress .mover .bar{ width: 820px; }
-#refer .prize-five .progress .mover .bar{ width: 1120px; }
+.mover {
+	width: 100%;
+}
+
+#refer .prize-two .progress .mover .bar{ width: 31% !important; }
+#refer .prize-three .progress .mover .bar{ width: 48% !important; }
+#refer .prize-four .progress .mover .bar{ width: 63% !important; }
+#refer .prize-five .progress .mover .bar{ width: 78% !important; }
+#refer .prize-six .progress .mover .bar{ width: 100% !important; }
 
 
 #refer .prizes ul.products{
