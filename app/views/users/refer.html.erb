@@ -37,7 +37,7 @@
 </div>
 
 <%
-  referrals_count = @user.referrals.count
+  referrals_count = 60
 
   stops = User::REFERRAL_STEPS
 
@@ -61,11 +61,11 @@
       <li class="title trade"><p class="friends">FRIENDS JOINED</p><p class="rewards">AL ET CLAR TREATS</p></li>
 
       <% stops.each do |stop| %>
-        <li class="product lato <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last<% end %>">
+        <li class="product lato <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'six' %>last<% end %>">
           <div class="circle trade"><%= stop["count"] %></div>
           <div class="sep"></div>
           <p><%= stop["html"].html_safe %></p>
-          
+
         </li>
       <% end %>
     </ul>

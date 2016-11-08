@@ -18,34 +18,27 @@ class User < ActiveRecord::Base
     {
       'count' => 2,
       'html' => 'Sneak peek at the launch collection',
-      # 'class' => 'two',
-      # 'image' =>  ActionController::Base.helpers.asset_path(
-      #   'refer/cream-tooltip@2x.png')
+      'class' => 'two'
     },
     {
       'count' => 5,
       'html' => 'Exclusive Access: <br> Shop the launch collection a day before everyone else',
-      # 'class' => 'three',
-      # 'image' => ActionController::Base.helpers.asset_path(
-      #   'refer/truman@2x.png')
+      'class' => 'three'
     },
     {
       'count' => 15,
       'html' => 'S$20 shopping voucher',
-      # 'class' => 'four',
-      # 'image' => ActionController::Base.helpers.asset_path(
-      #   'refer/winston@2x.png')
+      'class' => 'four'
     },
     {
       'count' => 30,
       'html' => 'Free Quintessential Top worth S$46',
-      # 'class' => 'five',
-      # 'image' => ActionController::Base.helpers.asset_path(
-      #   'refer/blade-explain@2x.png')
+      'class' => 'five'
     },
     {
       'count' => 60,
-      'html' => 'Free local shipping for life'
+      'html' => 'Free local shipping for life',
+      'class' => 'six'
     }
 
   ]
