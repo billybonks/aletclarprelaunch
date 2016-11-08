@@ -1,4 +1,5 @@
 require 'users_helper'
+require 'mailchimp_helper'
 
 class User < ActiveRecord::Base
   belongs_to :referrer, class_name: 'User', foreign_key: 'referrer_id'
@@ -57,6 +58,7 @@ class User < ActiveRecord::Base
   end
 
   def send_welcome_email
-    UserMailer.delay.signup_email(self)
+    MailchimpHelper.add_to_list self
+    #UserMailer.delay.signup_email(self)
   end
 end
