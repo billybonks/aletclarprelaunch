@@ -18,9 +18,9 @@
           <p class="title trade">INVITE YOUR FRIENDS &amp; EARN SHOPPING TREATS.</p>
           <p class="subtitle lato">Share your unique link via email, Facebook, Twitter or Whatsapp and earn a special treat for each friend who signs up.</p>
 
-            <div class="copy-link lato"><%= root_url %>?ref=<%= @user.referral_code %>
+            <div id="copy" class="copy-link lato"><%= root_url %>?ref=<%= @user.referral_code %>
               <div class="cl">
-              <i class="fa fa-link" aria-hidden="true" onclick="copyToClipboard('<%= root_url %>?ref=<%= @user.referral_code %>')"></i>
+              <i class="fa fa-link" aria-hidden="true" style="cursor:pointer;" onclick="copyToClipboard('<%= root_url %>?ref=<%= @user.referral_code %>')"></i>
               </div>
             </div>
 
@@ -99,7 +99,7 @@
 <script src="https://use.fontawesome.com/4bcdb51a04.js"></script>
 <script>
 // A simple function to copy a string to clipboard. See https://github.com/lgarron/clipboard.js for a full solution.
-var copyToClipboard = (function() {
+var copyToClipboard = (function() {;
   var _dataString = null;
   document.addEventListener("copy", function(e){
     if (_dataString !== null) {
@@ -112,6 +112,10 @@ var copyToClipboard = (function() {
     }
   });
   return function(data) {
+    document.getElementById('copy').className = "copy-link lato white"
+    setTimeout(function () {
+      document.getElementById('copy').className = "copy-link lato"
+    }, 200);
     _dataString = data;
     document.execCommand("copy");
   };

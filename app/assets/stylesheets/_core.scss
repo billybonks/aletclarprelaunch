@@ -9,6 +9,14 @@ form{
 
 }
 
+#copy {
+	transition: background-color 0.2s ease;
+}
+
+.white{
+	background: white;
+}
+
 .clearfix:before,
 .clearfix:after {
     content: " "; /* 1 */
