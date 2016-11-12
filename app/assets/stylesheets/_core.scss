@@ -181,6 +181,7 @@ img.aec_logo {
 	border: 0;
 	cursor: pointer;
 	margin-left: -3px;
+	-webkit-appearance:none;
 
 }
 
@@ -336,7 +337,7 @@ img.aec_logo {
 }
 
 #refer .header{
-	height: 40px;
+	/* height: 40px; */
 	background: #3e4999;
 	width: 100%;
 	overflow:hidden;
@@ -346,7 +347,7 @@ img.aec_logo {
 }
 
 #refer .header .content{
-	width: 315px;
+	/* width: 315px; */
 	margin: 0 auto;
 }
 
@@ -849,7 +850,7 @@ only screen and (min-device-pixel-ratio: 2) {
 	}
 
 	#refer .header {
-		height: 30px;
+		/* height: 30px; */
 		width: 100%;
 	}
 
@@ -858,8 +859,8 @@ only screen and (min-device-pixel-ratio: 2) {
 	}
 
 	#refer .header p {
-		font-size: 3.5vw;
-		line-height: 30px;
+		font-size: 70%;
+		line-height: 250%;
 	}
 
 	#refer img.aec_small_hero_img {
