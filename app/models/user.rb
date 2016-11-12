@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
     },
     {
       'count' => 30,
-      'html' => 'Free Quintessential Top worth S$46',
+      'html' => 'Free Quintessential Top worth S$39',
       'class' => 'five'
     },
     {
