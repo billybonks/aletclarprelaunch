@@ -617,14 +617,14 @@ img.aec_logo {
 }
 
 #refer .prizes .products li.product.selected .circle{
-	background: #995F5E !important;
-	border-color: #995F5E !important;
+	background: #3e4999 !important;
+	border-color: #3e4999 !important;
 	color: #FFF !important;
 }
 
 
 #refer .prizes .products li.product.selected p{
-	color: #995F5E !important;
+	color: #3e4999 !important;
 }
 
 #refer .prizes .products li.product .tooltip{
@@ -993,6 +993,12 @@ only screen and (min-device-pixel-ratio: 2) {
 		position: absolute;
 		top: 198px;
 	}
+
+	#refer .prize-two .progress .mover .bar{ width: 20% !important; }
+	#refer .prize-three .progress .mover .bar{ width: 40% !important; }
+	#refer .prize-four .progress .mover .bar{ width: 60% !important; }
+	#refer .prize-five .progress .mover .bar{ width: 80% !important; }
+	#refer .prize-six .progress .mover .bar{ width: 100% !important; }
 
 }
 
