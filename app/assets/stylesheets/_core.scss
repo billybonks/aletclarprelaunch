@@ -986,7 +986,7 @@ only screen and (min-device-pixel-ratio: 2) {
 	}
 
 	#refer .prizes .progress .mover .bar {
-		width: 18vw; /* 90vw is complete progress */
+		width: 0vw; /* 90vw is complete progress */
 	}
 
 	#refer .prizes .progress {
