@@ -6,6 +6,8 @@ Prelaunchr::Application.routes.draw do
 
   root :to => "users#new"
 
+  post 'mailchimp/subscriber' => 'mailchimp#subscribed'
+  get 'mailchimp/subscriber' => 'mailchimp#subscribed'
   post 'users/create' => 'users#create'
   get 'refer-a-friend' => 'users#refer'
   get 'privacy-policy' => 'users#policy'
