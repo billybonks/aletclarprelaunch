@@ -565,7 +565,7 @@ img.aec_logo {
 #refer .prizes .products li.product{
 	height: auto;
 	color: #3e4999;
-	width: 12.5%;
+	width: 12%;
 	margin-right: 3.18%;
 	float: left;
 	position: relative;
@@ -653,7 +653,7 @@ img.aec_logo {
 	color: #3e4999;
 	width: 100%;
 	font-weight: 500;
-	margin-top: 5%;
+	margin-top: 2.5%;
 }
 
 #refer .prizes p.place span{
@@ -1011,6 +1011,12 @@ only screen and (min-device-pixel-ratio: 2) {
 
 	#refer .prizes .products li.product p {
 			font-size: 0.8em;
+	}
+}
+
+@media only screen and (min-width: 800px ) and (max-width: 875px) {
+	#refer .prizes .products li.product {
+		width: 11.5%;
 	}
 }
 

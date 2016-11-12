@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     },
     {
       'count' => 5,
-      'html' => 'Exclusive Access: <br> Shop the launch collection a day before everyone else',
+      'html' => 'Exclusive Access: <br>Shop a day before everyone else',
       'class' => 'three'
     },
     {
