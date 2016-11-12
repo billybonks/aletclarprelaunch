@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
 
   ]
 
+  def verified_referrals
+    referrals.select{ |ref| ref.verified == true}
+  end
+
   private
 
   def create_referral_code

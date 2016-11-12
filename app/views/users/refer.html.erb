@@ -37,7 +37,7 @@
 </div>
 
 <%
-  referrals_count = @user.referrals.count
+  referrals_count = @user.verified_referrals.count
 
   stops = User::REFERRAL_STEPS
 
