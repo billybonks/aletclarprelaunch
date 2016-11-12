@@ -5,7 +5,7 @@ namespace :prelaunchr do
     task :create_winner_csvs => :environment do
         stops = User::REFERRAL_STEPS.map{|stop| stop["count"]}
 
-        winners = Hash.new {|h,k| h[k]=[]} 
+        winners = Hash.new {|h,k| h[k]=[]}
         User.all.each { |user|
             found = nil
 
@@ -20,9 +20,36 @@ namespace :prelaunchr do
             end
         }
 
-        winners.each { |stop, list|  
+        winners.each { |stop, list|
             CSV.open("#{Rails.root}/lib/assets/group_#{stop}.csv", "wb") do |csv|
-                list.each { |user|  
+                list.each { |user|
+                    csv << [user.email, user.referrals.count]
+                }
+            end
+        }
+    end
+
+    task :create_verified_winner_csvs => :environment do
+        stops = User::REFERRAL_STEPS.map{|stop| stop["count"]}
+
+        winners = Hash.new {|h,k| h[k]=[]}
+        User.all.each { |user|
+            found = nil
+
+            stops.reverse_each { |stop|
+                if stop <= user.verified_referrals.count and !found
+                    found = stop
+                end
+            }
+
+            if found
+                winners[found] << user
+            end
+        }
+
+        winners.each { |stop, list|
+            CSV.open("#{Rails.root}/lib/assets/verified_group_#{stop}.csv", "wb") do |csv|
+                list.each { |user|
                     csv << [user.email, user.referrals.count]
                 }
             end
