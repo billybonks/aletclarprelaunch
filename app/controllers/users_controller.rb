@@ -49,6 +49,17 @@ class UsersController < ApplicationController
     redirect_to root_path, status: 404
   end
 
+  def verified_referrals
+    csv_string = CSV.generate do |csv|
+      csv << ['email','referrals','verified_referrals']
+      User.all.each do |user|
+        csv << [user.email, user.referrals.count, user.verified_referrals.count]
+      end
+    end
+    puts csv_string
+    render :csv  => csv_string
+  end
+
   private
 
   def skip_first_page

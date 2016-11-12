@@ -8,6 +8,7 @@ Prelaunchr::Application.routes.draw do
 
   post 'mailchimp/subscriber' => 'mailchimp#subscribed'
   get 'mailchimp/subscriber' => 'mailchimp#subscribed'
+  get 'winners/verified' =>'users#verified_referrals'
   post 'users/create' => 'users#create'
   get 'refer-a-friend' => 'users#refer'
   get 'privacy-policy' => 'users#policy'
