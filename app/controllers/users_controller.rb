@@ -32,8 +32,10 @@ class UsersController < ApplicationController
     @bodyId = 'refer'
     @is_mobile = mobile_device?
 
-    @user = User.find_by_email(cookies[:h_email].downcase)
-
+    if cookies[:h_email]
+      @user = User.find_by_email(cookies[:h_email].downcase)
+    end
+    
     respond_to do |format|
       if @user.nil?
         format.html { redirect_to root_path, alert: 'Something went wrong!' }
