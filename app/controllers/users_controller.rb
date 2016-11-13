@@ -52,9 +52,9 @@ class UsersController < ApplicationController
 
   def verified_referrals
     csv_string = CSV.generate do |csv|
-      csv << ['email','referrals','verified_referrals', 'created_at']
+      csv << ['email', 'verified', 'referrals','verified_referrals', 'created_at', 'updated_at']
       User.all.each do |user|
-        csv << [user.email, user.referrals.count, user.verified_referrals.count, user.created_at]
+        csv << [user.email, user.verified, user.referrals.count, user.verified_referrals.count,  user.created_at, user.updated_at ]
       end
     end
     puts csv_string
