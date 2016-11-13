@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def create
     ref_code = cookies[:h_ref]
     email = params[:user][:email]
-    @user = User.new(email: email)
+    @user = User.new(email: email.downcase)
     @user.referrer = User.find_by_referral_code(ref_code) if ref_code
     if @user.save
       cookies[:h_email] = { value: @user.email }
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @bodyId = 'refer'
     @is_mobile = mobile_device?
 
-    @user = User.find_by_email(cookies[:h_email])
+    @user = User.find_by_email(cookies[:h_email].downcase)
 
     respond_to do |format|
       if @user.nil?
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
   private
 
   def user_exists
-    email = params[:user][:email]
+    email = params[:user][:email].downcase
     if User.where(email: email).count == 1
       cookies[:h_email] = { value: email }
       return redirect_to '/refer-a-friend'
@@ -75,7 +75,7 @@ class UsersController < ApplicationController
     return if Rails.application.config.ended
 
     email = cookies[:h_email]
-    if email && User.find_by_email(email)
+    if email && User.find_by_email(email.downcase)
       redirect_to '/refer-a-friend'
     else
       cookies.delete :h_email
