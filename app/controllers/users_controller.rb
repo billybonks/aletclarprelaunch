@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :user_exists, only: :create
   before_filter :skip_first_page, only: :new
   before_filter :handle_ip, only: :create
 
@@ -61,6 +62,14 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def user_exists
+    email = params[:user][:email]
+    if User.where(email: email).count == 1
+      cookies[:h_email] = { value: email }
+      return redirect_to '/refer-a-friend'
+    end
+  end
 
   def skip_first_page
     return if Rails.application.config.ended
