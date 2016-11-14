@@ -3,4 +3,5 @@
 <%= form_for @user, :url => { :action => "create" } do |f| %>
   <%= f.text_field :email, :placeholder => "Enter Email", :class => "email lato" %>
   <input class="submit lato" name="commit" type="submit" value=">" />
+  <p class="ip_exceeded lato">Submissions via your IP address has reached a maximum. Please try again at another location.</p>
 <% end %>
