@@ -322,6 +322,8 @@ img.aec_logo {
 
 #home .cta a {
 	text-decoration: none;
+	color: #fff;
+	font-size: 1em;
 }
 
 
@@ -847,6 +849,10 @@ only screen and (min-device-pixel-ratio: 2) {
 	#home .ip_exceeded {
 		color: #3e4999;
 		
+	}
+
+	#home .cta a {
+		color: #3e4999;
 	}
 
 	::-webkit-input-placeholder {
